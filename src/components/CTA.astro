@@ -1,0 +1,51 @@
+---
+const phoneHref = "tel:+18644308432";
+const phoneDisplay = "864-430-8432";
+const smsHref = "sms:+18644308432";
+---
+
+<section id="contact" class="relative overflow-hidden bg-ink py-24 md:py-32">
+  <div
+    class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-ember/20 blur-3xl"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-ember-dark/20 blur-3xl"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-4xl px-6 text-center lg:px-10">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-ember-light">Get Started</p>
+    <h2 class="mt-4 font-display text-4xl font-medium leading-tight text-cream text-balance md:text-6xl">
+      Let&rsquo;s build your backyard
+    </h2>
+    <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/70 md:text-lg">
+      Reach out for a free, no-pressure quote. We&rsquo;ll talk through your
+      space, your budget, and what a Fireside Pools build could look like.
+    </p>
+
+    <div class="mt-12 flex flex-col items-center gap-6">
+      <a
+        href={phoneHref}
+        class="font-display text-4xl font-medium text-ember-light transition-colors hover:text-ember-light/80 md:text-5xl"
+      >
+        {phoneDisplay}
+      </a>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href={phoneHref}
+          class="inline-flex items-center justify-center rounded-full bg-ember px-8 py-3.5 text-sm font-semibold tracking-wide text-ink transition-transform hover:scale-[1.03] hover:bg-ember-light"
+        >
+          Call Now
+        </a>
+        <a
+          href={smsHref}
+          class="inline-flex items-center justify-center rounded-full border border-cream/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-cream transition-colors hover:border-cream hover:bg-cream/10"
+        >
+          Text Us
+        </a>
+      </div>
+      <p class="text-sm text-cream/50">Or message us on Facebook &mdash; we&rsquo;d love to hear about your project.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+const phoneHref = "tel:+18644308432";
+const phoneDisplay = "864-430-8432";
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-ink-soft py-12">
+  <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center lg:flex-row lg:justify-between lg:text-left lg:px-10">
+    <div>
+      <p class="font-display text-xl font-medium text-cream">
+        Fireside <span class="text-ember-light">Pools</span>
+      </p>
+      <p class="mt-1 text-sm text-cream/50">Serving the Upstate of South Carolina</p>
+    </div>
+
+    <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-cream/60">
+      <a href="#work" class="hover:text-ember-light">Our Work</a>
+      <a href="#services" class="hover:text-ember-light">Services</a>
+      <a href="#about" class="hover:text-ember-light">About</a>
+      <a href={phoneHref} class="hover:text-ember-light">{phoneDisplay}</a>
+    </nav>
+
+    <p class="text-xs text-cream/40">&copy; {year} Fireside Pools. All rights reserved.</p>
+  </div>
+</footer>

@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import bradAndWife from "../assets/Screenshot 2026-08-27 143041.png";
+
+const phoneHref = "tel:+18644308432";
+const phoneDisplay = "864-430-8432";
+---
+
+<section id="about" class="bg-cream py-24 md:py-32">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
+    <div class="relative">
+      <div class="overflow-hidden rounded-2xl shadow-2xl shadow-ink/20">
+        <Image
+          src={bradAndWife}
+          alt="Bradley Houston, founder of Fireside Pools, with his wife"
+          class="aspect-[4/5] w-full object-cover"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 1024px) 40vw, 90vw"
+        />
+      </div>
+      <div class="absolute -bottom-6 -right-6 hidden rounded-2xl bg-ink px-6 py-5 shadow-xl md:block">
+        <p class="font-display text-3xl font-medium text-ember-light">Upstate, SC</p>
+        <p class="text-xs uppercase tracking-[0.2em] text-cream/60">Family owned &amp; operated</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-ember-dark">Meet the Owners</p>
+      <h2 class="mt-4 font-display text-4xl font-medium leading-tight text-ink text-balance md:text-5xl">
+        Husband, new father, and pool builder
+      </h2>
+      <div class="mt-6 space-y-5 text-base leading-relaxed text-ink/70 md:text-lg">
+        <p>
+          Hi, I&rsquo;m Bradley Houston &mdash; husband, new father, and
+          entrepreneur here in the Upstate of South Carolina. Fireside Pools
+          started with a simple idea: build a company that&rsquo;s personal,
+          not just transactional.
+        </p>
+        <p>
+          My wife and I are passionate about creating beautiful outdoor
+          spaces and building pools that families can enjoy for years to
+          come. Every backyard we take on becomes a place for your family to
+          spend time together, make memories, and get more out of your home.
+        </p>
+      </div>
+
+      <a
+        href={phoneHref}
+        class="mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-3.5 text-sm font-semibold tracking-wide text-cream transition-colors hover:bg-ember-dark"
+      >
+        Call {phoneDisplay}
+      </a>
+    </div>
+  </div>
+</section>
