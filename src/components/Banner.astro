@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import aerialImage from "../assets/hero_option3.png";
+---
+
+<section class="relative flex h-[60vh] min-h-[420px] w-full items-center overflow-hidden bg-ink">
+  <Image
+    src={aerialImage}
+    alt="Aerial view of a Fireside Pools backyard build, showing the finished pool, patio, and stone pathways nestled among trees"
+    class="absolute inset-0 h-full w-full scale-105 object-cover"
+    widths={[640, 1024, 1600, 2200]}
+    sizes="100vw"
+  />
+  <div class="absolute inset-0 bg-ink/50"></div>
+  <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+    <p class="font-display text-2xl italic leading-relaxed text-cream text-balance md:text-4xl">
+      &ldquo;We understand that you are trusting a company with more than just
+      your yard &mdash; you&rsquo;re trusting us to create a space for your
+      family for years to come.&rdquo;
+    </p>
+    <p class="mt-6 text-sm font-medium uppercase tracking-[0.25em] text-ember-light">
+      Bradley Houston, Founder
+    </p>
+  </div>
+</section>

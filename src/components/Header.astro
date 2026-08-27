@@ -1,0 +1,68 @@
+---
+const phoneDisplay = "864-430-8432";
+const phoneHref = "tel:+18644308432";
+
+const links = [
+  { href: "#work", label: "Our Work" },
+  { href: "#services", label: "Services" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
+  data-scrolled="false"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+    <a href="#top" class="flex items-baseline gap-2">
+      <span class="font-display text-xl font-medium tracking-tight text-cream md:text-2xl" id="brand-name">
+        Fireside <span class="text-ember-light">Pools</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-10 md:flex">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-medium tracking-wide text-cream/80 transition-colors hover:text-ember-light"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href={phoneHref}
+      class="hidden items-center gap-2 rounded-full border border-ember-light/40 px-5 py-2.5 text-sm font-medium tracking-wide text-cream transition-colors hover:border-ember-light hover:bg-ember/10 md:inline-flex"
+    >
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      {phoneDisplay}
+    </a>
+
+    <a
+      href={phoneHref}
+      class="inline-flex items-center rounded-full bg-ember px-4 py-2 text-sm font-medium text-ink md:hidden"
+    >
+      Call Now
+    </a>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header");
+  const onScroll = () => {
+    if (!header) return;
+    const scrolled = window.scrollY > 40;
+    header.dataset.scrolled = String(scrolled);
+    header.classList.toggle("bg-ink/90", scrolled);
+    header.classList.toggle("backdrop-blur-md", scrolled);
+    header.classList.toggle("shadow-lg", scrolled);
+    header.classList.toggle("shadow-black/20", scrolled);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+</script>

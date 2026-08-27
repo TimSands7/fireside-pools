@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import img1 from "../assets/Screenshot 2026-08-27 141729.png";
+import img2 from "../assets/Screenshot 2026-08-27 141852.png";
+import img3 from "../assets/Screenshot 2026-08-27 141944.png";
+import img4 from "../assets/Screenshot 2026-08-27 142119.png";
+import img5 from "../assets/Screenshot 2026-08-27 142155.png";
+import img6 from "../assets/Screenshot 2026-08-27 142224.png";
+import img7 from "../assets/Screenshot 2026-08-27 142301.png";
+import img8 from "../assets/Screenshot 2026-08-27 142428.png";
+import img9 from "../assets/Screenshot 2026-08-27 142627.png";
+
+const projects = [
+  { src: img1, alt: "Square pool with raised stacked-stone spa and travertine deck overlooking the Upstate countryside", tag: "Pool & Spa" },
+  { src: img9, alt: "Pool and spa paired with a covered outdoor living pavilion featuring an outdoor TV", tag: "Outdoor Living" },
+  { src: img3, alt: "Aerial view of a rectangular pool and spa framed by brick retaining walls and full landscaping", tag: "Full Backyard" },
+  { src: img6, alt: "Pool with a built-in tanning ledge and loungers bordered by artificial turf and iron fencing", tag: "Sun Shelf" },
+  { src: img8, alt: "Freeform kidney-shaped pool with a broad concrete deck beside a white farmhouse", tag: "Freeform Pool" },
+  { src: img5, alt: "Blue tile pool with a raised stacked-stone wall along a wooded lot", tag: "Raised Wall" },
+  { src: img4, alt: "Rectangular pool with a dark stacked-stone wall and white vinyl privacy fence", tag: "Pool & Spa" },
+  { src: img2, alt: "Pool and spa combo set against a covered farmhouse patio", tag: "Pool & Spa" },
+  { src: img7, alt: "Dark-bottom rectangular pool set into a landscaped, mulched slope", tag: "Dark Water" },
+];
+---
+
+<section id="work" class="bg-ink py-24 md:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-ember-light">Recent Projects</p>
+        <h2 class="mt-4 max-w-xl font-display text-4xl font-medium leading-tight text-cream text-balance md:text-5xl">
+          A look at the backyards we&rsquo;ve built
+        </h2>
+      </div>
+      <p class="max-w-sm text-sm leading-relaxed text-cream/60 md:text-base">
+        Every project is different &mdash; from freeform lagoon pools to
+        clean rectangular designs with sun shelves and spas. More projects
+        coming soon.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <div class="group relative aspect-[4/5] overflow-hidden rounded-xl bg-ink-soft">
+          <Image
+            src={project.src}
+            alt={project.alt}
+            class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+            widths={[400, 600, 900]}
+            sizes="(min-width: 1024px) 32vw, (min-width: 640px) 48vw, 92vw"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/0 to-ink/0 opacity-80 transition-opacity duration-500 group-hover:opacity-100"></div>
+          <span class="absolute bottom-4 left-4 rounded-full border border-cream/20 bg-ink/50 px-3 py-1 text-xs font-medium tracking-wide text-cream backdrop-blur-sm">
+            {project.tag}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

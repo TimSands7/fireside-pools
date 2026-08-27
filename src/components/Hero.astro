@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/hero_option1.png";
+
+const phoneHref = "tel:+18644308432";
+---
+
+<section id="top" class="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink">
+  <Image
+    src={heroImage}
+    alt="Modern dark two-story home with a sleek rectangular pool and spa at dusk, built by Fireside Pools in the Upstate of South Carolina"
+    class="absolute inset-0 h-full w-full object-cover"
+    widths={[640, 1024, 1600, 2200]}
+    sizes="100vw"
+    priority
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/10"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-ink/30"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl px-6 pb-24 pt-40 lg:px-10 lg:pb-32">
+    <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-ember-light/30 bg-ink/40 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-ember-light backdrop-blur-sm">
+      Upstate South Carolina Pool Builders
+    </p>
+    <h1 class="max-w-3xl font-display text-5xl font-medium leading-[1.05] text-cream text-balance md:text-6xl lg:text-7xl">
+      Luxury pools, built for real families
+    </h1>
+    <p class="mt-6 max-w-xl text-lg leading-relaxed text-cream/80 md:text-xl">
+      Fireside Pools designs and builds stunning pools, spas, and outdoor
+      living spaces across the Upstate &mdash; without the luxury price tag.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a
+        href={phoneHref}
+        class="inline-flex items-center justify-center rounded-full bg-ember px-8 py-3.5 text-sm font-semibold tracking-wide text-ink transition-transform hover:scale-[1.03] hover:bg-ember-light"
+      >
+        Get a Free Quote
+      </a>
+      <a
+        href="#work"
+        class="inline-flex items-center justify-center rounded-full border border-cream/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-cream transition-colors hover:border-cream hover:bg-cream/10"
+      >
+        View Our Work
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 right-6 z-10 hidden flex-col items-center gap-2 text-cream/60 lg:flex lg:right-10">
+    <span class="text-[11px] uppercase tracking-[0.25em]">Scroll</span>
+    <span class="h-10 w-px animate-pulse bg-cream/40"></span>
+  </div>
+</section>
